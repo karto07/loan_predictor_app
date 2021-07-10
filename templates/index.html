@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    .center {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(230, 239, 245);
+    }
+  </style>
+</head>
+
+
+<body class="center">
+
+  <h1 style="color:rgb(44, 44, 90); font-weight: 700;">
+    <i class="fa fa-bank"></i> Loan Approval Probability
+  </h1>
+
+  <p style="color:rgb(51, 51, 83); font-weight: 700;">
+    Can a Customer with given previous banking activities get a loan?
+  </p>
+
+  <form action="result" autocomplete="off">
+    {% csrf_token %}
+
+    
+
+    <div class="form-group">
+      <input class="form-control" placeholder= "Gender" list="Sex" name="Gender">
+      <datalist id="Sex">
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder= "Marital Status" list="Status" name="Married">
+      <datalist id="Status">
+        <option value="1">Married</option>
+        <option value="0">Single</option>
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder= "Number of Dependents" list="count" name="Dependents">
+      <datalist id="count">
+        <option value="0">
+        <option value="1">
+        <option value="2">
+        <option value="3">
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder= "Education" list="Edu" name="Education">
+      <datalist id="Edu">
+        <option value="1">Graduate</option>
+        <option value="0">Not-Graduate</option>
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder= "Self Employed?" list="Emp" name="Self_Employed">
+      <datalist id="Emp">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder= "Availed Credit Before?" list="History" name="Credit_History">
+      <datalist id="History">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder= "Property Situated In?" list="Area" name="Property_Area">
+      <datalist id="Area">
+        <option value="2">Urban</option>
+        <option value="1">Semi-Urban</option>
+        <option value="0">Rural</option>
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Total Monthly Income?"  name="Total_Income">
+    </div>
+
+
+    <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
+
+
+  </form>
+  <a href="http://192.168.1.44:8000/" target="_blank" style="padding-top: 5px;">View Model Explanation</a>
+</body>
+
+</html>
